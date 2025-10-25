@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+import "Common.proto";
+option csharp_namespace = "Service.Shared";
+
+service Product{
+    rpc GetProduct(ProductRequest) returns (ProductResponse);
+    rpc GetAllProducts(EmptyRequest) returns (ProductListResponse);
+}
+
+message ProductRequest{
+    string ProductId = 1;
+}
+
+message ProductResponse{
+    Category CategoryDetails = 1;
+    string ProductId = 2;
+    string ProductName = 3;
+    int32 RemaninigCount = 4;
+}
+
+message Category{
+    string CategoryId = 1;
+    string CategoryName = 2;
+}
+
+message ProductListResponse{
+    repeated ProductResponse Products = 1;
+}

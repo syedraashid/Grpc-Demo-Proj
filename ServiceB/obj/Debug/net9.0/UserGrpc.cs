@@ -7,7 +7,7 @@
 
 using grpc = global::Grpc.Core;
 
-namespace Shared.Protos {
+namespace Service.Shared {
   public static partial class User
   {
     static readonly string __ServiceName = "User";
@@ -46,12 +46,12 @@ namespace Shared.Protos {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Shared.Protos.UserRequest> __Marshaller_UserRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Shared.Protos.UserRequest.Parser));
+    static readonly grpc::Marshaller<global::Service.Shared.UserRequest> __Marshaller_UserRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Service.Shared.UserRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Shared.Protos.UserResponse> __Marshaller_UserResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Shared.Protos.UserResponse.Parser));
+    static readonly grpc::Marshaller<global::Service.Shared.UserResponse> __Marshaller_UserResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Service.Shared.UserResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Shared.Protos.UserRequest, global::Shared.Protos.UserResponse> __Method_GetUser = new grpc::Method<global::Shared.Protos.UserRequest, global::Shared.Protos.UserResponse>(
+    static readonly grpc::Method<global::Service.Shared.UserRequest, global::Service.Shared.UserResponse> __Method_GetUser = new grpc::Method<global::Service.Shared.UserRequest, global::Service.Shared.UserResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetUser",
@@ -61,7 +61,7 @@ namespace Shared.Protos {
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::Shared.Protos.UserReflection.Descriptor.Services[0]; }
+      get { return global::Service.Shared.UserReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of User</summary>
@@ -69,7 +69,7 @@ namespace Shared.Protos {
     public abstract partial class UserBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Shared.Protos.UserResponse> GetUser(global::Shared.Protos.UserRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Service.Shared.UserResponse> GetUser(global::Service.Shared.UserRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -104,22 +104,22 @@ namespace Shared.Protos {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Shared.Protos.UserResponse GetUser(global::Shared.Protos.UserRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Service.Shared.UserResponse GetUser(global::Service.Shared.UserRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetUser(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Shared.Protos.UserResponse GetUser(global::Shared.Protos.UserRequest request, grpc::CallOptions options)
+      public virtual global::Service.Shared.UserResponse GetUser(global::Service.Shared.UserRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetUser, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Shared.Protos.UserResponse> GetUserAsync(global::Shared.Protos.UserRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Service.Shared.UserResponse> GetUserAsync(global::Service.Shared.UserRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetUserAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Shared.Protos.UserResponse> GetUserAsync(global::Shared.Protos.UserRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Service.Shared.UserResponse> GetUserAsync(global::Service.Shared.UserRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetUser, null, options, request);
       }
@@ -147,7 +147,7 @@ namespace Shared.Protos {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, UserBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_GetUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Shared.Protos.UserRequest, global::Shared.Protos.UserResponse>(serviceImpl.GetUser));
+      serviceBinder.AddMethod(__Method_GetUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Service.Shared.UserRequest, global::Service.Shared.UserResponse>(serviceImpl.GetUser));
     }
 
   }

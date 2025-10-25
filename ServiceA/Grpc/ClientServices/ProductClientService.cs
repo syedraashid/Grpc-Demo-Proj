@@ -1,4 +1,4 @@
-using Shared.Protos;
+using Service.Shared;
 
 namespace ServiceA.Grpc.clientServices
 {

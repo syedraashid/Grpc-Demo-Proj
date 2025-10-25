@@ -1,0 +1,30 @@
+###########################
+# General .NET Artifacts #
+###########################
+
+# Binaries and build artifacts
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+# Standard compilation files
+*.pdb
+*.suo
+*.user
+*.userosscache
+*.compile
+*.log
+*.vspscc
+# Project lock files
+project.lock.json
+
+# Tooling and Restore
+.paket/paket.generated.targets
+.vs/
+.vscode/
+
+# Package folders
+**/packages/
+# NuGet and tools
+*.nupkg
+*.snk

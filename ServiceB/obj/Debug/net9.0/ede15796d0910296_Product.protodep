@@ -1,3 +1,0 @@
-obj\Debug\net9.0/Product.cs \
-obj\Debug\net9.0/ProductGrpc.cs: ../Shared.Protos/Protos/Common.proto\
- ../Shared.Protos/Protos/Product.proto

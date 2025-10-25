@@ -1,20 +1,31 @@
 
 using Grpc.Core;
-using Shared.Protos;
+using Service.Shared;
+using ServiceA.Repository;
 
 namespace ServiceA.Grpc.HostedServices
 {
     public class UserService:User.UserBase
     {
-        public override Task<UserResponse> GetUser(UserRequest userRequest, ServerCallContext context)
+        protected readonly IUserRepo _repo;
+
+        public UserService(IUserRepo repo)
         {
-            var Response = new UserResponse
+            _repo = repo;
+        }
+        public override async Task<UserResponse> GetUser(UserRequest userRequest, ServerCallContext context)
+        {
+            var userData = await _repo.GetUser(userRequest.Name);
+            var Response = new UserResponse();
+
+            if (userData != null)
             {
-                Name = "User",
-                Email = "Email",    
-                DateOfBirth = "DOB"
-            };
-            return Task.FromResult(Response);
+                Response.Name = userData.UserName;
+                Response.Email = userData.Email;
+                Response.DateOfBirth = userData.DateOfBirth;
+                
+            }
+            return Response;
         }
     }
 }

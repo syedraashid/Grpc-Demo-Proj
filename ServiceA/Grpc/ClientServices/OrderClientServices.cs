@@ -1,4 +1,4 @@
-using Shared.Protos;
+using Service.Shared;
 
 namespace ServiceA.Grpc.clientServices
 {
@@ -21,11 +21,11 @@ namespace ServiceA.Grpc.clientServices
             return Response;
         }
 
-        public async Task<OrderResponse> GetOrdersAsync(string Useremail)
+        public async Task<OrderResponse> GetOrdersAsync(string Orderid)
         {
             var Response = await _client.GetOrderAsync(new OrderRequest
             {
-                UserEmail = Useremail
+                OrderId = Orderid
             });
 
             return Response;

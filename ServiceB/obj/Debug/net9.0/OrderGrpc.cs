@@ -7,7 +7,7 @@
 
 using grpc = global::Grpc.Core;
 
-namespace Shared.Protos {
+namespace Service.Shared {
   public static partial class Order
   {
     static readonly string __ServiceName = "Order";
@@ -46,16 +46,16 @@ namespace Shared.Protos {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Shared.Protos.OrderRequest> __Marshaller_OrderRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Shared.Protos.OrderRequest.Parser));
+    static readonly grpc::Marshaller<global::Service.Shared.OrderRequest> __Marshaller_OrderRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Service.Shared.OrderRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Shared.Protos.OrderResponse> __Marshaller_OrderResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Shared.Protos.OrderResponse.Parser));
+    static readonly grpc::Marshaller<global::Service.Shared.OrderResponse> __Marshaller_OrderResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Service.Shared.OrderResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Shared.Protos.EmptyRequest> __Marshaller_EmptyRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Shared.Protos.EmptyRequest.Parser));
+    static readonly grpc::Marshaller<global::Service.Shared.EmptyRequest> __Marshaller_EmptyRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Service.Shared.EmptyRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Shared.Protos.OrderListResponse> __Marshaller_OrderListResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Shared.Protos.OrderListResponse.Parser));
+    static readonly grpc::Marshaller<global::Service.Shared.OrderListResponse> __Marshaller_OrderListResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Service.Shared.OrderListResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Shared.Protos.OrderRequest, global::Shared.Protos.OrderResponse> __Method_GetOrder = new grpc::Method<global::Shared.Protos.OrderRequest, global::Shared.Protos.OrderResponse>(
+    static readonly grpc::Method<global::Service.Shared.OrderRequest, global::Service.Shared.OrderResponse> __Method_GetOrder = new grpc::Method<global::Service.Shared.OrderRequest, global::Service.Shared.OrderResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetOrder",
@@ -63,7 +63,7 @@ namespace Shared.Protos {
         __Marshaller_OrderResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Shared.Protos.EmptyRequest, global::Shared.Protos.OrderListResponse> __Method_GetAllOrders = new grpc::Method<global::Shared.Protos.EmptyRequest, global::Shared.Protos.OrderListResponse>(
+    static readonly grpc::Method<global::Service.Shared.EmptyRequest, global::Service.Shared.OrderListResponse> __Method_GetAllOrders = new grpc::Method<global::Service.Shared.EmptyRequest, global::Service.Shared.OrderListResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetAllOrders",
@@ -73,7 +73,7 @@ namespace Shared.Protos {
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::Shared.Protos.OrderReflection.Descriptor.Services[0]; }
+      get { return global::Service.Shared.OrderReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of Order</summary>
@@ -81,13 +81,13 @@ namespace Shared.Protos {
     public abstract partial class OrderBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Shared.Protos.OrderResponse> GetOrder(global::Shared.Protos.OrderRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Service.Shared.OrderResponse> GetOrder(global::Service.Shared.OrderRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Shared.Protos.OrderListResponse> GetAllOrders(global::Shared.Protos.EmptyRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Service.Shared.OrderListResponse> GetAllOrders(global::Service.Shared.EmptyRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -122,42 +122,42 @@ namespace Shared.Protos {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Shared.Protos.OrderResponse GetOrder(global::Shared.Protos.OrderRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Service.Shared.OrderResponse GetOrder(global::Service.Shared.OrderRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetOrder(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Shared.Protos.OrderResponse GetOrder(global::Shared.Protos.OrderRequest request, grpc::CallOptions options)
+      public virtual global::Service.Shared.OrderResponse GetOrder(global::Service.Shared.OrderRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetOrder, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Shared.Protos.OrderResponse> GetOrderAsync(global::Shared.Protos.OrderRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Service.Shared.OrderResponse> GetOrderAsync(global::Service.Shared.OrderRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetOrderAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Shared.Protos.OrderResponse> GetOrderAsync(global::Shared.Protos.OrderRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Service.Shared.OrderResponse> GetOrderAsync(global::Service.Shared.OrderRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetOrder, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Shared.Protos.OrderListResponse GetAllOrders(global::Shared.Protos.EmptyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Service.Shared.OrderListResponse GetAllOrders(global::Service.Shared.EmptyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetAllOrders(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Shared.Protos.OrderListResponse GetAllOrders(global::Shared.Protos.EmptyRequest request, grpc::CallOptions options)
+      public virtual global::Service.Shared.OrderListResponse GetAllOrders(global::Service.Shared.EmptyRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetAllOrders, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Shared.Protos.OrderListResponse> GetAllOrdersAsync(global::Shared.Protos.EmptyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Service.Shared.OrderListResponse> GetAllOrdersAsync(global::Service.Shared.EmptyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetAllOrdersAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Shared.Protos.OrderListResponse> GetAllOrdersAsync(global::Shared.Protos.EmptyRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Service.Shared.OrderListResponse> GetAllOrdersAsync(global::Service.Shared.EmptyRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetAllOrders, null, options, request);
       }
@@ -186,8 +186,8 @@ namespace Shared.Protos {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, OrderBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_GetOrder, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Shared.Protos.OrderRequest, global::Shared.Protos.OrderResponse>(serviceImpl.GetOrder));
-      serviceBinder.AddMethod(__Method_GetAllOrders, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Shared.Protos.EmptyRequest, global::Shared.Protos.OrderListResponse>(serviceImpl.GetAllOrders));
+      serviceBinder.AddMethod(__Method_GetOrder, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Service.Shared.OrderRequest, global::Service.Shared.OrderResponse>(serviceImpl.GetOrder));
+      serviceBinder.AddMethod(__Method_GetAllOrders, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Service.Shared.EmptyRequest, global::Service.Shared.OrderListResponse>(serviceImpl.GetAllOrders));
     }
 
   }

@@ -1,0 +1,18 @@
+
+syntax = "proto3";
+
+option csharp_namespace = "Service.Shared";
+
+service User {
+  rpc GetUser (UserRequest) returns (UserResponse);
+}
+
+message UserRequest {
+  string name = 1;
+}
+
+message UserResponse {
+  string Name = 1;
+  string Email = 2;
+  string DateOfBirth = 3;
+}

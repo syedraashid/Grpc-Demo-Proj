@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Shared.Protos {
+namespace Service.Shared {
 
   /// <summary>Holder for reflection information generated from Order.proto</summary>
   public static partial class OrderReflection {
@@ -24,23 +24,23 @@ namespace Shared.Protos {
     static OrderReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgtPcmRlci5wcm90bxoMQ29tbW9uLnByb3RvIiEKDE9yZGVyUmVxdWVzdBIR",
-            "CglVc2VyRW1haWwYASABKAkibAoNT3JkZXJSZXNwb25zZRIgCg5QYXltZW50",
-            "RGV0YWlscxgBIAEoCzIILlBheW1lbnQSDwoHT3JkZXJJZBgCIAEoCRITCgtP",
-            "cmRlckFtb3VudBgDIAEoBRITCgtPcmRlclN0YXR1cxgEIAEoCSIzCgdQYXlt",
-            "ZW50EhEKCVBheW1lbnRJZBgBIAEoCRIVCg1QYXltZW50U3RhdHVzGAIgASgJ",
-            "IjMKEU9yZGVyTGlzdFJlc3BvbnNlEh4KBm9yZGVycxgBIAMoCzIOLk9yZGVy",
-            "UmVzcG9uc2UyZQoFT3JkZXISKQoIR2V0T3JkZXISDS5PcmRlclJlcXVlc3Qa",
-            "Di5PcmRlclJlc3BvbnNlEjEKDEdldEFsbE9yZGVycxINLkVtcHR5UmVxdWVz",
-            "dBoSLk9yZGVyTGlzdFJlc3BvbnNlQhCqAg1TaGFyZWQuUHJvdG9zYgZwcm90",
-            "bzM="));
+            "CgtPcmRlci5wcm90bxoMQ29tbW9uLnByb3RvIh8KDE9yZGVyUmVxdWVzdBIP",
+            "CgdPcmRlcklkGAEgASgJImwKDU9yZGVyUmVzcG9uc2USIAoOUGF5bWVudERl",
+            "dGFpbHMYASABKAsyCC5QYXltZW50Eg8KB09yZGVySWQYAiABKAkSEwoLT3Jk",
+            "ZXJBbW91bnQYAyABKAUSEwoLT3JkZXJTdGF0dXMYBCABKAkiMwoHUGF5bWVu",
+            "dBIRCglQYXltZW50SWQYASABKAkSFQoNUGF5bWVudFN0YXR1cxgCIAEoCSIz",
+            "ChFPcmRlckxpc3RSZXNwb25zZRIeCgZvcmRlcnMYASADKAsyDi5PcmRlclJl",
+            "c3BvbnNlMmUKBU9yZGVyEikKCEdldE9yZGVyEg0uT3JkZXJSZXF1ZXN0Gg4u",
+            "T3JkZXJSZXNwb25zZRIxCgxHZXRBbGxPcmRlcnMSDS5FbXB0eVJlcXVlc3Qa",
+            "Ei5PcmRlckxpc3RSZXNwb25zZUIRqgIOU2VydmljZS5TaGFyZWRiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Shared.Protos.CommonReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Service.Shared.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Shared.Protos.OrderRequest), global::Shared.Protos.OrderRequest.Parser, new[]{ "UserEmail" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Shared.Protos.OrderResponse), global::Shared.Protos.OrderResponse.Parser, new[]{ "PaymentDetails", "OrderId", "OrderAmount", "OrderStatus" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Shared.Protos.Payment), global::Shared.Protos.Payment.Parser, new[]{ "PaymentId", "PaymentStatus" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Shared.Protos.OrderListResponse), global::Shared.Protos.OrderListResponse.Parser, new[]{ "Orders" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Service.Shared.OrderRequest), global::Service.Shared.OrderRequest.Parser, new[]{ "OrderId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Service.Shared.OrderResponse), global::Service.Shared.OrderResponse.Parser, new[]{ "PaymentDetails", "OrderId", "OrderAmount", "OrderStatus" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Service.Shared.Payment), global::Service.Shared.Payment.Parser, new[]{ "PaymentId", "PaymentStatus" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Service.Shared.OrderListResponse), global::Service.Shared.OrderListResponse.Parser, new[]{ "Orders" }, null, null, null, null)
           }));
     }
     #endregion
@@ -62,7 +62,7 @@ namespace Shared.Protos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Shared.Protos.OrderReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Service.Shared.OrderReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -82,7 +82,7 @@ namespace Shared.Protos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public OrderRequest(OrderRequest other) : this() {
-      userEmail_ = other.userEmail_;
+      orderId_ = other.orderId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,15 +92,15 @@ namespace Shared.Protos {
       return new OrderRequest(this);
     }
 
-    /// <summary>Field number for the "UserEmail" field.</summary>
-    public const int UserEmailFieldNumber = 1;
-    private string userEmail_ = "";
+    /// <summary>Field number for the "OrderId" field.</summary>
+    public const int OrderIdFieldNumber = 1;
+    private string orderId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string UserEmail {
-      get { return userEmail_; }
+    public string OrderId {
+      get { return orderId_; }
       set {
-        userEmail_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        orderId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -119,7 +119,7 @@ namespace Shared.Protos {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (UserEmail != other.UserEmail) return false;
+      if (OrderId != other.OrderId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -127,7 +127,7 @@ namespace Shared.Protos {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (UserEmail.Length != 0) hash ^= UserEmail.GetHashCode();
+      if (OrderId.Length != 0) hash ^= OrderId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -146,9 +146,9 @@ namespace Shared.Protos {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (UserEmail.Length != 0) {
+      if (OrderId.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(UserEmail);
+        output.WriteString(OrderId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -160,9 +160,9 @@ namespace Shared.Protos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (UserEmail.Length != 0) {
+      if (OrderId.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(UserEmail);
+        output.WriteString(OrderId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -174,8 +174,8 @@ namespace Shared.Protos {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (UserEmail.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(UserEmail);
+      if (OrderId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(OrderId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -189,8 +189,8 @@ namespace Shared.Protos {
       if (other == null) {
         return;
       }
-      if (other.UserEmail.Length != 0) {
-        UserEmail = other.UserEmail;
+      if (other.OrderId.Length != 0) {
+        OrderId = other.OrderId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -212,7 +212,7 @@ namespace Shared.Protos {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            UserEmail = input.ReadString();
+            OrderId = input.ReadString();
             break;
           }
         }
@@ -235,7 +235,7 @@ namespace Shared.Protos {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            UserEmail = input.ReadString();
+            OrderId = input.ReadString();
             break;
           }
         }
@@ -260,7 +260,7 @@ namespace Shared.Protos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Shared.Protos.OrderReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Service.Shared.OrderReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -295,10 +295,10 @@ namespace Shared.Protos {
 
     /// <summary>Field number for the "PaymentDetails" field.</summary>
     public const int PaymentDetailsFieldNumber = 1;
-    private global::Shared.Protos.Payment paymentDetails_;
+    private global::Service.Shared.Payment paymentDetails_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Shared.Protos.Payment PaymentDetails {
+    public global::Service.Shared.Payment PaymentDetails {
       get { return paymentDetails_; }
       set {
         paymentDetails_ = value;
@@ -467,7 +467,7 @@ namespace Shared.Protos {
       }
       if (other.paymentDetails_ != null) {
         if (paymentDetails_ == null) {
-          PaymentDetails = new global::Shared.Protos.Payment();
+          PaymentDetails = new global::Service.Shared.Payment();
         }
         PaymentDetails.MergeFrom(other.PaymentDetails);
       }
@@ -501,7 +501,7 @@ namespace Shared.Protos {
             break;
           case 10: {
             if (paymentDetails_ == null) {
-              PaymentDetails = new global::Shared.Protos.Payment();
+              PaymentDetails = new global::Service.Shared.Payment();
             }
             input.ReadMessage(PaymentDetails);
             break;
@@ -539,7 +539,7 @@ namespace Shared.Protos {
             break;
           case 10: {
             if (paymentDetails_ == null) {
-              PaymentDetails = new global::Shared.Protos.Payment();
+              PaymentDetails = new global::Service.Shared.Payment();
             }
             input.ReadMessage(PaymentDetails);
             break;
@@ -578,7 +578,7 @@ namespace Shared.Protos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Shared.Protos.OrderReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Service.Shared.OrderReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -813,7 +813,7 @@ namespace Shared.Protos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Shared.Protos.OrderReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Service.Shared.OrderReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -845,12 +845,12 @@ namespace Shared.Protos {
 
     /// <summary>Field number for the "orders" field.</summary>
     public const int OrdersFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Shared.Protos.OrderResponse> _repeated_orders_codec
-        = pb::FieldCodec.ForMessage(10, global::Shared.Protos.OrderResponse.Parser);
-    private readonly pbc::RepeatedField<global::Shared.Protos.OrderResponse> orders_ = new pbc::RepeatedField<global::Shared.Protos.OrderResponse>();
+    private static readonly pb::FieldCodec<global::Service.Shared.OrderResponse> _repeated_orders_codec
+        = pb::FieldCodec.ForMessage(10, global::Service.Shared.OrderResponse.Parser);
+    private readonly pbc::RepeatedField<global::Service.Shared.OrderResponse> orders_ = new pbc::RepeatedField<global::Service.Shared.OrderResponse>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Shared.Protos.OrderResponse> Orders {
+    public pbc::RepeatedField<global::Service.Shared.OrderResponse> Orders {
       get { return orders_; }
     }
 

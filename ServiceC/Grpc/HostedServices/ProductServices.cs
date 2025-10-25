@@ -1,58 +1,71 @@
 
 using Grpc.Core;
-using Shared.Protos;
+using Service.Shared;
+using ServiceA.Repository;
 
 namespace ServiceC.Grpc.HostedServices
 {
     public class ProductService:Product.ProductBase
     {
-        public override Task<ProductResponse> GetProduct(ProductRequest ProductRequest, ServerCallContext context)
+        protected readonly IProductRepo _repo;
+
+        public ProductService(IProductRepo repo)
         {
-            var Response = new ProductResponse
+            _repo = repo;
+        }
+        public override async Task<ProductResponse> GetProduct(ProductRequest ProductRequest, ServerCallContext context)
+        {
+            var Data = await _repo.GetProduct(ProductRequest.ProductId);
+            var Response = new ProductResponse();
+
+            if (Data != null)
             {
-                ProductId = "1",
-                ProductName = "NewProductName",
-                RemaninigCount = 12,
-                CategoryDetails = new Category
+                Response.ProductId = Data.ProductId ?? "";
+                Response.ProductName = Data.ProductName ?? "";
+                Response.RemaninigCount = Data.RemaninigCount;
+
+                if (Data.CategoryDetails != null)
                 {
-                    CategoryId = "1",
-                    CategoryName = "CategorynName"
+                    Response.CategoryDetails = new Category
+                    {
+                        CategoryId = Data.CategoryDetails.CategoryId ?? "",
+                        CategoryName = Data.CategoryDetails.CategoryName ?? ""
+                    };
                 }
-            };
-            return Task.FromResult(Response);
+                else
+                {
+                    Response.CategoryDetails = new Category
+                    {
+                        CategoryId = "",
+                        CategoryName = ""
+                    };
+                }
+            }
+    
+            return Response;
         }
 
-        public override Task<ProductListResponse> GetAllProducts(EmptyRequest ProductRequest, ServerCallContext context)
+        public override async Task<ProductListResponse> GetAllProducts(EmptyRequest ProductRequest, ServerCallContext context)
         {
+            var Data = await _repo.GetAllProducts();
             var Response = new ProductListResponse();
-            
-                Response.Products.AddRange(new[]
-                {
-                    new ProductResponse()
-                        {
-                            ProductId = "1",
-                            ProductName = "NewProductName",
-                            RemaninigCount = 12,
-                            CategoryDetails = new Category
-                            {
-                                CategoryId = "1",
-                                CategoryName = "CategorynName"
-                            }
-                        },
-                        new ProductResponse()
-                        {
-                            ProductId = "1",
-                            ProductName = "NewProductName",
-                            RemaninigCount = 12,
-                            CategoryDetails = new Category
-                            {
-                                CategoryId = "1",
-                                CategoryName = "CategorynName"
-                            }
-                        }
-                });
 
-            return Task.FromResult(Response);
+            var ProductResponses = Data.Select(_ => new ProductResponse
+            {
+                ProductId = _.ProductId,
+                ProductName = _.ProductName,
+                RemaninigCount = _.RemaninigCount,
+                CategoryDetails = new Category
+                {
+                    CategoryId = _.CategoryDetails.CategoryId,
+                    CategoryName = _.CategoryDetails.CategoryName
+                }
+            }).ToList();
+
+            Response.Products.AddRange(ProductResponses);
+
+            return Response;
+
         }
     }
 }

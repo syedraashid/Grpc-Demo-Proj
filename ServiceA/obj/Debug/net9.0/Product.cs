@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Shared.Protos {
+namespace Service.Shared {
 
   /// <summary>Holder for reflection information generated from Product.proto</summary>
   public static partial class ProductReflection {
@@ -33,14 +33,14 @@ namespace Shared.Protos {
             "dWN0cxgBIAMoCzIQLlByb2R1Y3RSZXNwb25zZTJxCgdQcm9kdWN0Ei8KCkdl",
             "dFByb2R1Y3QSDy5Qcm9kdWN0UmVxdWVzdBoQLlByb2R1Y3RSZXNwb25zZRI1",
             "Cg5HZXRBbGxQcm9kdWN0cxINLkVtcHR5UmVxdWVzdBoULlByb2R1Y3RMaXN0",
-            "UmVzcG9uc2VCEKoCDVNoYXJlZC5Qcm90b3NiBnByb3RvMw=="));
+            "UmVzcG9uc2VCEaoCDlNlcnZpY2UuU2hhcmVkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Shared.Protos.CommonReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Service.Shared.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Shared.Protos.ProductRequest), global::Shared.Protos.ProductRequest.Parser, new[]{ "ProductId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Shared.Protos.ProductResponse), global::Shared.Protos.ProductResponse.Parser, new[]{ "CategoryDetails", "ProductId", "ProductName", "RemaninigCount" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Shared.Protos.Category), global::Shared.Protos.Category.Parser, new[]{ "CategoryId", "CategoryName" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Shared.Protos.ProductListResponse), global::Shared.Protos.ProductListResponse.Parser, new[]{ "Products" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Service.Shared.ProductRequest), global::Service.Shared.ProductRequest.Parser, new[]{ "ProductId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Service.Shared.ProductResponse), global::Service.Shared.ProductResponse.Parser, new[]{ "CategoryDetails", "ProductId", "ProductName", "RemaninigCount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Service.Shared.Category), global::Service.Shared.Category.Parser, new[]{ "CategoryId", "CategoryName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Service.Shared.ProductListResponse), global::Service.Shared.ProductListResponse.Parser, new[]{ "Products" }, null, null, null, null)
           }));
     }
     #endregion
@@ -62,7 +62,7 @@ namespace Shared.Protos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Shared.Protos.ProductReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Service.Shared.ProductReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -260,7 +260,7 @@ namespace Shared.Protos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Shared.Protos.ProductReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Service.Shared.ProductReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -295,10 +295,10 @@ namespace Shared.Protos {
 
     /// <summary>Field number for the "CategoryDetails" field.</summary>
     public const int CategoryDetailsFieldNumber = 1;
-    private global::Shared.Protos.Category categoryDetails_;
+    private global::Service.Shared.Category categoryDetails_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Shared.Protos.Category CategoryDetails {
+    public global::Service.Shared.Category CategoryDetails {
       get { return categoryDetails_; }
       set {
         categoryDetails_ = value;
@@ -467,7 +467,7 @@ namespace Shared.Protos {
       }
       if (other.categoryDetails_ != null) {
         if (categoryDetails_ == null) {
-          CategoryDetails = new global::Shared.Protos.Category();
+          CategoryDetails = new global::Service.Shared.Category();
         }
         CategoryDetails.MergeFrom(other.CategoryDetails);
       }
@@ -501,7 +501,7 @@ namespace Shared.Protos {
             break;
           case 10: {
             if (categoryDetails_ == null) {
-              CategoryDetails = new global::Shared.Protos.Category();
+              CategoryDetails = new global::Service.Shared.Category();
             }
             input.ReadMessage(CategoryDetails);
             break;
@@ -539,7 +539,7 @@ namespace Shared.Protos {
             break;
           case 10: {
             if (categoryDetails_ == null) {
-              CategoryDetails = new global::Shared.Protos.Category();
+              CategoryDetails = new global::Service.Shared.Category();
             }
             input.ReadMessage(CategoryDetails);
             break;
@@ -578,7 +578,7 @@ namespace Shared.Protos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Shared.Protos.ProductReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Service.Shared.ProductReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -813,7 +813,7 @@ namespace Shared.Protos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Shared.Protos.ProductReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Service.Shared.ProductReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -845,12 +845,12 @@ namespace Shared.Protos {
 
     /// <summary>Field number for the "Products" field.</summary>
     public const int ProductsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Shared.Protos.ProductResponse> _repeated_products_codec
-        = pb::FieldCodec.ForMessage(10, global::Shared.Protos.ProductResponse.Parser);
-    private readonly pbc::RepeatedField<global::Shared.Protos.ProductResponse> products_ = new pbc::RepeatedField<global::Shared.Protos.ProductResponse>();
+    private static readonly pb::FieldCodec<global::Service.Shared.ProductResponse> _repeated_products_codec
+        = pb::FieldCodec.ForMessage(10, global::Service.Shared.ProductResponse.Parser);
+    private readonly pbc::RepeatedField<global::Service.Shared.ProductResponse> products_ = new pbc::RepeatedField<global::Service.Shared.ProductResponse>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Shared.Protos.ProductResponse> Products {
+    public pbc::RepeatedField<global::Service.Shared.ProductResponse> Products {
       get { return products_; }
     }
 

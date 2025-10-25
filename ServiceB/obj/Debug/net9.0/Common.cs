@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Shared.Protos {
+namespace Service.Shared {
 
   /// <summary>Holder for reflection information generated from Common.proto</summary>
   public static partial class CommonReflection {
@@ -24,12 +24,12 @@ namespace Shared.Protos {
     static CommonReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgxDb21tb24ucHJvdG8iDgoMRW1wdHlSZXF1ZXN0QhCqAg1TaGFyZWQuUHJv",
-            "dG9zYgZwcm90bzM="));
+            "CgxDb21tb24ucHJvdG8iDgoMRW1wdHlSZXF1ZXN0QhGqAg5TZXJ2aWNlLlNo",
+            "YXJlZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Shared.Protos.EmptyRequest), global::Shared.Protos.EmptyRequest.Parser, null, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Service.Shared.EmptyRequest), global::Service.Shared.EmptyRequest.Parser, null, null, null, null, null)
           }));
     }
     #endregion
@@ -51,7 +51,7 @@ namespace Shared.Protos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Shared.Protos.CommonReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Service.Shared.CommonReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

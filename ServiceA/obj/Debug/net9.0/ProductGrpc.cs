@@ -7,7 +7,7 @@
 
 using grpc = global::Grpc.Core;
 
-namespace Shared.Protos {
+namespace Service.Shared {
   public static partial class Product
   {
     static readonly string __ServiceName = "Product";
@@ -46,16 +46,16 @@ namespace Shared.Protos {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Shared.Protos.ProductRequest> __Marshaller_ProductRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Shared.Protos.ProductRequest.Parser));
+    static readonly grpc::Marshaller<global::Service.Shared.ProductRequest> __Marshaller_ProductRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Service.Shared.ProductRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Shared.Protos.ProductResponse> __Marshaller_ProductResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Shared.Protos.ProductResponse.Parser));
+    static readonly grpc::Marshaller<global::Service.Shared.ProductResponse> __Marshaller_ProductResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Service.Shared.ProductResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Shared.Protos.EmptyRequest> __Marshaller_EmptyRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Shared.Protos.EmptyRequest.Parser));
+    static readonly grpc::Marshaller<global::Service.Shared.EmptyRequest> __Marshaller_EmptyRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Service.Shared.EmptyRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Shared.Protos.ProductListResponse> __Marshaller_ProductListResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Shared.Protos.ProductListResponse.Parser));
+    static readonly grpc::Marshaller<global::Service.Shared.ProductListResponse> __Marshaller_ProductListResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Service.Shared.ProductListResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Shared.Protos.ProductRequest, global::Shared.Protos.ProductResponse> __Method_GetProduct = new grpc::Method<global::Shared.Protos.ProductRequest, global::Shared.Protos.ProductResponse>(
+    static readonly grpc::Method<global::Service.Shared.ProductRequest, global::Service.Shared.ProductResponse> __Method_GetProduct = new grpc::Method<global::Service.Shared.ProductRequest, global::Service.Shared.ProductResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetProduct",
@@ -63,7 +63,7 @@ namespace Shared.Protos {
         __Marshaller_ProductResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Shared.Protos.EmptyRequest, global::Shared.Protos.ProductListResponse> __Method_GetAllProducts = new grpc::Method<global::Shared.Protos.EmptyRequest, global::Shared.Protos.ProductListResponse>(
+    static readonly grpc::Method<global::Service.Shared.EmptyRequest, global::Service.Shared.ProductListResponse> __Method_GetAllProducts = new grpc::Method<global::Service.Shared.EmptyRequest, global::Service.Shared.ProductListResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetAllProducts",
@@ -73,7 +73,7 @@ namespace Shared.Protos {
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::Shared.Protos.ProductReflection.Descriptor.Services[0]; }
+      get { return global::Service.Shared.ProductReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of Product</summary>
@@ -81,13 +81,13 @@ namespace Shared.Protos {
     public abstract partial class ProductBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Shared.Protos.ProductResponse> GetProduct(global::Shared.Protos.ProductRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Service.Shared.ProductResponse> GetProduct(global::Service.Shared.ProductRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Shared.Protos.ProductListResponse> GetAllProducts(global::Shared.Protos.EmptyRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Service.Shared.ProductListResponse> GetAllProducts(global::Service.Shared.EmptyRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -122,42 +122,42 @@ namespace Shared.Protos {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Shared.Protos.ProductResponse GetProduct(global::Shared.Protos.ProductRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Service.Shared.ProductResponse GetProduct(global::Service.Shared.ProductRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetProduct(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Shared.Protos.ProductResponse GetProduct(global::Shared.Protos.ProductRequest request, grpc::CallOptions options)
+      public virtual global::Service.Shared.ProductResponse GetProduct(global::Service.Shared.ProductRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetProduct, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Shared.Protos.ProductResponse> GetProductAsync(global::Shared.Protos.ProductRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Service.Shared.ProductResponse> GetProductAsync(global::Service.Shared.ProductRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetProductAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Shared.Protos.ProductResponse> GetProductAsync(global::Shared.Protos.ProductRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Service.Shared.ProductResponse> GetProductAsync(global::Service.Shared.ProductRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetProduct, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Shared.Protos.ProductListResponse GetAllProducts(global::Shared.Protos.EmptyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Service.Shared.ProductListResponse GetAllProducts(global::Service.Shared.EmptyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetAllProducts(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Shared.Protos.ProductListResponse GetAllProducts(global::Shared.Protos.EmptyRequest request, grpc::CallOptions options)
+      public virtual global::Service.Shared.ProductListResponse GetAllProducts(global::Service.Shared.EmptyRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetAllProducts, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Shared.Protos.ProductListResponse> GetAllProductsAsync(global::Shared.Protos.EmptyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Service.Shared.ProductListResponse> GetAllProductsAsync(global::Service.Shared.EmptyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetAllProductsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Shared.Protos.ProductListResponse> GetAllProductsAsync(global::Shared.Protos.EmptyRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Service.Shared.ProductListResponse> GetAllProductsAsync(global::Service.Shared.EmptyRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetAllProducts, null, options, request);
       }
@@ -186,8 +186,8 @@ namespace Shared.Protos {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, ProductBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_GetProduct, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Shared.Protos.ProductRequest, global::Shared.Protos.ProductResponse>(serviceImpl.GetProduct));
-      serviceBinder.AddMethod(__Method_GetAllProducts, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Shared.Protos.EmptyRequest, global::Shared.Protos.ProductListResponse>(serviceImpl.GetAllProducts));
+      serviceBinder.AddMethod(__Method_GetProduct, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Service.Shared.ProductRequest, global::Service.Shared.ProductResponse>(serviceImpl.GetProduct));
+      serviceBinder.AddMethod(__Method_GetAllProducts, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Service.Shared.EmptyRequest, global::Service.Shared.ProductListResponse>(serviceImpl.GetAllProducts));
     }
 
   }
