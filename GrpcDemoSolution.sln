@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Protos", "Shared.Protos\Shared.Protos.csproj", "{AF62BA65-B800-46E6-88C9-C72F5EA13689}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Shared", "Service.Shared\Service.Shared.csproj", "{AF62BA65-B800-46E6-88C9-C72F5EA13689}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceA", "ServiceA\ServiceA.csproj", "{ADB9A405-C3AF-4384-BA03-9246F856589E}"
 EndProject
