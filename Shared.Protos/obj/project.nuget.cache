@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "M4DVHrElWEI=",
+  "success": true,
+  "projectFilePath": "D:\\SyedRaashid\\Projects\\GrpcDemoProj\\GrpcDemoSolution\\Shared.Protos\\Shared.Protos.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\SOFT SUAVE A-6\\.nuget\\packages\\grpc.tools\\2.72.0\\grpc.tools.2.72.0.nupkg.sha512"
+  ],
+  "logs": []
+}
