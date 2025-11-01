@@ -113,33 +113,53 @@ localhost:7001 - ServiceC gRPC client for Product
 ```
 GrpcDemoSolution/
 │
-├── Shared.Protos/                 # Centralized proto contracts
-│   ├── user.proto
-│   ├── order.proto
-│   └── product.proto
+├── Service.Shared/ # Shared logic and proto definitions
+│ ├── Protos/ # Centralized proto contracts
+│ │ ├── user.proto
+│ │ ├── order.proto
+│ │ └── product.proto
+│ ├── BaseClientServices.cs
+│ ├── BaseRepository.cs
+│ ├── EntityModels.cs
+│ ├── ServiceExtensions.cs
+│ └── Service.Shared.csproj
 │
-├── ServiceA/                      # User Service
-│   ├── Controllers/
-│   ├── Services/
-│   ├── Program.cs
-│   ├── Dockerfile
-│   └── appsettings.json
+├── ServiceA/ # User Service
+│ ├── Controllers/
+│ ├── Grpc/
+│ ├── Properties/
+│ ├── Repository/
+│ ├── Program.cs
+│ ├── Dockerfile
+│ ├── appsettings.json
+│ ├── appsettings.Development.json
+│ └── ServiceA.csproj
 │
-├── ServiceB/                      # Order Service
-│   ├── Controllers/
-│   ├── Clients/
-│   ├── Program.cs
-│   ├── Dockerfile
-│   └── appsettings.json
+├── ServiceB/ # Order Service
+│ ├── Controllers/
+│ ├── Grpc/
+│ ├── Properties/
+│ ├── Repository/
+│ ├── Program.cs
+│ ├── Dockerfile
+│ ├── appsettings.json
+│ ├── appsettings.Development.json
+│ └── ServiceB.csproj
 │
-├── ServiceC/                      # Analytics Service
-│   ├── Controllers/
-│   ├── Clients/
-│   ├── Program.cs
-│   ├── Dockerfile
-│   └── appsettings.json
+├── ServiceC/ # Analytics / Product Service
+│ ├── Controllers/
+│ ├── Grpc/
+│ ├── Properties/
+│ ├── Repository/
+│ ├── Program.cs
+│ ├── Dockerfile
+│ ├── appsettings.json
+│ ├── appsettings.Development.json
+│ └── ServiceC.csproj
 │
+├── firebase-credentials.json # Firebase credentials file
 ├── docker-compose.yml
 ├── GrpcDemoSolution.sln
-└── README.md
+├── .gitignore
+└── ReadMe.md
 ```
