@@ -1,12 +1,12 @@
-````markdown
 # gRPC + REST Multi-Service Architecture
 
 ## Table of Contents
 1. [Description](#description)
 2. [Project Flow](#project-flow)
-3. [Advantages of gRPC](#Advantages-of-gRPC)
+3. [Advantages of gRPC](#advantages-of-grpc)
 4. [Project Setup](#project-setup)
 5. [Directory Structure](#directory-structure)
+
 ---
 
 ## Description
@@ -29,7 +29,7 @@ This project demonstrates a **Base Level microservices architecture** where mult
    - It can **create or update user data** in the **Firebase database**.
 
 2. **ServiceB (Order Service)** consumes **ServiceA** via gRPC to fetch user details when processing or creating orders.  
-   - It can also communicate with **ServiceC** using gRPC for product or analytics information.(Not Implemented yet just for example)
+   - It can also communicate with **ServiceC** using gRPC for product or analytics information. (Not Implemented yet just for example)  
    - The order data, along with user references, can be updated in **Firebase**.
 
 3. **ServiceC (Analytics / Product Service)** consumes **ServiceA** via gRPC to get user and order insights for analytics and reporting.  
@@ -39,33 +39,36 @@ This project demonstrates a **Base Level microservices architecture** where mult
 4. All services share a common **Shared.Protos** project, which contains `.proto` files defining the gRPC contracts.  
    - New services can easily integrate by referencing **Shared.Protos** to automatically generate gRPC client/server code.
 
-5. Each service exposes **REST endpoints** for testing and **gRPC endpoints** for Inter Communication
+5. Each service exposes **REST endpoints** for testing and **gRPC endpoints** for inter-communication.
 
-**Advantages of gRPC :**
+---
+
+## Advantages of gRPC
+
 - High-performance binary protocol (better than JSON over REST for internal service communication)
 - Strongly typed contracts (compile-time safety)
-- User Http/2 Which more faster than Http/1.1
+- Uses HTTP/2 which is faster than HTTP/1.1
 - Supports bi-directional streaming for advanced scenarios
 
 ---
 
 ## Project Setup
 
-Use Main branch for running the project locally (add multiple projects as startup)  
-Use the Develop branch for running the project containerized.
+Use **Main branch** for running the project locally (add multiple projects as startup).  
+Use the **Develop branch** for running the project containerized.
 
-### 5️⃣ Run Locally
+### 🧩 Run Locally
 
-Set **multiple startup projects** (ServiceA, ServiceB, ServiceC) in Visual Studio
+Set **multiple startup projects** (ServiceA, ServiceB, ServiceC) in Visual Studio  
 or use the command line:
 
 ```bash
 dotnet run --project ServiceA
 dotnet run --project ServiceB
 dotnet run --project ServiceC
-
 ```
-### Commands for Running in Docker
+
+### 🐳 Commands for Running in Docker
 
 #### 🧱 Building Images (run this from the base directory of the project)
 > ⚠️ First change the Firebase credentials path (let me know — I will share the file with you)
@@ -74,7 +77,7 @@ dotnet run --project ServiceC
 docker build -f ./ServiceA/Dockerfile -t service/servicea:dev .
 docker build -f ./ServiceB/Dockerfile -t service/serviceb:dev .
 docker build -f ./ServiceC/Dockerfile -t service/servicec:dev .
-````
+```
 
 #### 🚀 Running the Application
 
@@ -90,7 +93,7 @@ docker-compose down
 
 ---
 
-### Project Ports
+## Project Ports
 
 ```
 localhost:5000 - ServiceA (REST)
@@ -140,4 +143,3 @@ GrpcDemoSolution/
 ├── GrpcDemoSolution.sln
 └── README.md
 ```
-
