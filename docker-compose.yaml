@@ -1,0 +1,63 @@
+services:
+  servicea:
+    image: syedraashid/servicea:dev
+    container_name: servicea
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5000;http://+:5001
+      - GrpcServices__ProductService=http://servicec:7001
+      - GrpcServices__OrderService=http://serviceb:6002
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/config/firebase-credentials.json
+    volumes:
+      - "C:/Users/SOFT SUAVE A-6/Downloads/grpc-demo-1c14a-firebase-adminsdk-fbsvc-da1854634a.json:/app/config/firebase-credentials.json:ro"
+    depends_on:
+      - serviceb
+      - servicec
+    networks:
+      - grpc-network
+    restart: unless-stopped # Re-added the restart policy from your initial file
+
+  serviceb:
+    image: syedraashid/serviceb:dev
+    container_name: serviceb
+    ports:
+      - "6001:6001"
+      - "6002:6002"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:6001;http://+:6002
+      - GrpcServices__UserService=http://servicea:5001
+      - GrpcServices__ProductService=http://servicec:7001
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/config/firebase-credentials.json
+    volumes:
+      - "C:/Users/SOFT SUAVE A-6/Downloads/grpc-demo-1c14a-firebase-adminsdk-fbsvc-da1854634a.json:/app/config/firebase-credentials.json:ro"
+    depends_on:
+      - servicec
+    networks:
+      - grpc-network
+    restart: unless-stopped # Re-added the restart policy from your initial file
+
+  servicec:
+    image: syedraashid/servicec:dev
+    container_name: servicec
+    ports:
+      - "7000:7000"
+      - "7001:7001"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:7000;http://+:7001
+      - GrpcServices__OrderService=http://serviceb:6002
+      - GrpcServices__UserService=http://servicea:5001
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/config/firebase-credentials.json
+    volumes:
+      - "C:/Users/SOFT SUAVE A-6/Downloads/grpc-demo-1c14a-firebase-adminsdk-fbsvc-da1854634a.json:/app/config/firebase-credentials.json:ro"
+    networks:
+      - grpc-network
+    restart: unless-stopped # Re-added the restart policy from your initial file
+
+networks:
+  grpc-network:
+    driver: bridge
