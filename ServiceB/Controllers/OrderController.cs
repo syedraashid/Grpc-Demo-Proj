@@ -8,7 +8,7 @@ using ServiceB.Grpc.clientServices;
 namespace ServiceB.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/[action]")]
     public class OrderController : ControllerBase
     {
         private readonly IProductClientService _ProductClientService;
@@ -22,14 +22,14 @@ namespace ServiceB.Controllers
             _repo = orderRepo;
         }
 
-        [HttpGet("{GetUserDetails}")]
-        public async Task<IActionResult> GetUserDetails(string name)
+        [HttpGet(Name = "GetUserDetails")]
+        public async Task<IActionResult> GetUserDetails(string email)
         {
-            var response = await _UserClientService.GetUsersAsync(name);
+            var response = await _UserClientService.GetUsersAsync(email);
             return Ok(response);
         }
 
-        [HttpPost("{AddOrder}")]
+        [HttpPost(Name = "AddNewUser")]
         public async Task<IActionResult> AddNewUser(OrderModel order)
         {
             await _repo.AddOrder(order);
@@ -37,4 +37,3 @@ namespace ServiceB.Controllers
         }
     }
 }
-

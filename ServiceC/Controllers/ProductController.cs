@@ -8,7 +8,7 @@ using ServiceC.Grpc.clientServices;
 namespace ServiceC.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/[action]")]
     public class ProductController : ControllerBase
     {
         private readonly IOrderClientService _OrderClientService;
@@ -22,19 +22,18 @@ namespace ServiceC.Controllers
             _repo = repo;
         }
 
-        [HttpGet("{GetAllOrders}")]
+        [HttpGet(Name = "GetAllOrders")]
         public async Task<IActionResult> GetAllOrders()
         {
             var response = await _OrderClientService.GetAllOrdersAsync();
             return Ok(response);
         }
 
-        [HttpPost("{AddProduct}")]
-        public async Task<IActionResult> AddNewUser(ProductModel product)
+        [HttpPost(Name = "AddNewProduct")]
+        public async Task<IActionResult> AddNewProduct(ProductModel product)
         {
             await _repo.AddProduct(product);
             return Ok("Created");
         }
     }
 }
-

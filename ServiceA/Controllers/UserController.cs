@@ -8,7 +8,7 @@ using ServiceA.Repository;
 namespace ServiceA.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/[action]")]
     public class UserController : ControllerBase
     {
         private readonly IProductClientService _ProductClientService;
@@ -22,14 +22,14 @@ namespace ServiceA.Controllers
             _repo = repo;
         }
 
-        [HttpGet("{GetUserOrder}")]
-        public async Task<IActionResult> GetUserOrderDetails(string Email)
+        [HttpGet(Name = "GetUserOrderDetails")]
+        public async Task<IActionResult> GetUserOrderDetails(string orderId)
         {
-            var response = await _OrderClientService.GetOrdersAsync(Email);
+            var response = await _OrderClientService.GetOrdersAsync(orderId);
             return Ok(response);
         }
 
-        [HttpPost("{AddUser}")]
+        [HttpPost(Name = "AddNewUser")]
         public async Task<IActionResult> AddNewUser(UserModel user)
         {
             await _repo.AddUser(user);
@@ -37,4 +37,3 @@ namespace ServiceA.Controllers
         }
     }
 }
-
